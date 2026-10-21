@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Structured products: storage, swing, tolling, spark spreads · Energy Structuring Courses</title>
+<link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{var t=localStorage.getItem('esc.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Toggle module menu">Menu</button>
+  <a class="brand" href="../../index.html">Energy Structuring Courses</a>
+  <div class="crumbs"><a href="index.html">Course 7: Structured products</a></div>
+  <button class="icon-btn" id="theme-btn" type="button" title="Theme: auto / light / dark">Auto</button>
+</header>
+<div class="layout"><nav class="sidebar" aria-label="Course navigation"><h4>Course 7</h4><ol><li><a href="index.html" class="current"><span class="check"></span><span>Course overview</span></a></li><li><a href="glossary.html"><span class="check"></span><span>Course glossary</span></a></li><li><a href="flashcards.html"><span class="check"></span><span>All flashcards</span></a></li></ol><h4>Modules</h4><ol><li><a href="m1.html"><span class="check" data-done-key="c7/m1"></span><span>1. Swaps, Asian options and Black-76</span></a></li><li><a href="m2.html"><span class="check" data-done-key="c7/m2"></span><span>2. Spark and crack spread options</span></a></li><li><a href="m3.html"><span class="check" data-done-key="c7/m3"></span><span>3. Tolling and plant valuation</span></a></li><li><a href="m4.html"><span class="check" data-done-key="c7/m4"></span><span>4. Storage valuation</span></a></li><li><a href="m5.html"><span class="check" data-done-key="c7/m5"></span><span>5. Swing and variable-volume contracts</span></a></li><li><a href="m6.html"><span class="check" data-done-key="c7/m6"></span><span>6. Hedging structured books</span></a></li></ol><h4>Site</h4><ol><li><a href="../../index.html"><span class="check"></span><span>Dashboard</span></a></li><li><a href="../../library.html"><span class="check"></span><span>Library and sources</span></a></li></ol></nav><main id="main"><p class="note-small">Course 7 · Core</p><h1>Structured products: storage, swing, tolling, spark spreads</h1>
+<p>Origination desks earn their keep on structures: swaps and averages that match how clients buy and sell, spread options embedded in plants and refineries, storage, swing and load-following contracts, and the books that hold and hedge all of them. This course values each of these with the curve and volatility tools from Course 6. It then deals with what the models leave out: operating constraints, uneconomic exercise, correlation nobody quotes, and volume risk nobody trades. It draws on Swindle for desk practice, Eydeland and Wolyniec for structured products and plants, Mahoney for the link between hedging strategies and value, and Kaminski et al. for swing and Asian options.</p>
+<div class="objectives">
+<div class="box"><h3>By the end you will be able to</h3><ul>
+<li>Price strip, differential and participation swaps, and value Asian options with checks.</li>
+<li>Value spark and crack spread strips and convert power exposure to gas-equivalent hedges.</li>
+<li>Value a toll under start costs and minimum load, and compare dispatch rules.</li>
+<li>Compute storage intrinsic value and estimate extrinsic value by rolling intrinsic.</li>
+<li>Value swing rights and load-following uplift, and explain unit-contingent risk.</li>
+<li>Organise a structured book's risk as a hierarchy and attribute P&amp;L.</li>
+</ul></div>
+<div class="box"><h3>How this course draws on the books</h3><ul>
+<li><strong>Desk valuation and hedging:</strong> Swindle ch.6, 9, 13–15. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014)">Swindle</a></li>
+<li><strong>Structured products, plants and risk:</strong> Eydeland &amp; Wolyniec ch.8–10. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003)">Eydeland &amp; Wolyniec</a></li>
+<li><strong>Hedging strategies and lower bounds:</strong> Mahoney ch.3–4. <a class="cite" href="../../library.html#mahoney" title="D. Mahoney, Modeling and Valuation of Energy Structures (Palgrave Macmillan, 2016)">Mahoney</a></li>
+<li><strong>Exotic options (Asians, swing):</strong> Kaminski (ed.) ch.3. <a class="cite" href="../../library.html#kaminski" title="V. Kaminski (ed.), Managing Energy Price Risk, 2nd ed. (Risk Books, 1999)">Kaminski (ed.)</a></li>
+</ul></div>
+</div>
+<h2>A note on dates</h2>
+<div class="box"><p>Kaminski (1999) and Eydeland and Wolyniec (2003) describe Enron-era and early-2000s markets. Swindle (2014) uses data to 2012, and Mahoney (2016) is current on methods. The valuation logic has lasted. Market rules, clearing and margin, fleet mix and storage regulation have changed a lot, and each module's Dated box lists what to check.</p></div>
+<h2>More depth in this course</h2>
+<div class="box"><p>Going-deeper sections cover the √3 rule for averages, the dual-fuel lower bound, forward induction for cumulative constraints, rolling intrinsic and local time, splitting multi-period swing, and benchmark-first hedging as a liquidity choice. Tools include an Asian versus European explorer, a spark-spread strip, a toll dispatch simulator, a storage optimiser with rolling-intrinsic simulation, a swing-rights explorer and a P&amp;L attribution tool.</p></div>
+<h2>Reading the page markers</h2>
+<div class="box">
+<p><a class="cite" href="#">Swindle ch.13</a> Citation chip: hover for the full reference.</p>
+<p><span class="mark synth">Synthesis</span> Combined across books, or our own derivation from book inputs.</p>
+<p><span class="mark outside">Outside the texts</span> Added from beyond the course books; verify independently.</p>
+</div>
+
+<h2>Modules</h2><ol class="sources"><li><a href="m1.html"><strong>Swaps, Asian options and Black-76</strong></a> <span class="note-small">≈ 55 min · <span data-done-key="c7/m1"></span></span><div class="note-small">Strip swaps, differential and participation swaps, why energy options are Asians, and how averaging changes price and hedges.</div></li><li><a href="m2.html"><strong>Spark and crack spread options</strong></a> <span class="note-small">≈ 60 min · <span data-done-key="c7/m2"></span></span><div class="note-small">Spread options with a strike, monthly spark strips, where optionality sits in the year, crack spreads, and converting power exposure into gas.</div></li><li><a href="m3.html"><strong>Tolling and plant valuation</strong></a> <span class="note-small">≈ 70 min · <span data-done-key="c7/m3"></span></span><div class="note-small">Daily tolls, operating constraints, start costs and shadow prices, dispatch heuristics, hedging plants, and capacity payments.</div></li><li><a href="m4.html"><strong>Storage valuation</strong></a> <span class="note-small">≈ 70 min · <span data-done-key="c7/m4"></span></span><div class="note-small">Physical constraints, intrinsic value by optimisation, extrinsic value, rolling intrinsic, spread-option portfolios, and the correlation problem.</div></li><li><a href="m5.html"><strong>Swing and variable-volume contracts</strong></a> <span class="note-small">≈ 65 min · <span data-done-key="c7/m5"></span></span><div class="note-small">Swing, recall and nomination rights, take-or-pay, valuation bounds and the swing DP, load-following deals and unit-contingent risk.</div></li><li><a href="m6.html"><strong>Hedging structured books</strong></a> <span class="note-small">≈ 60 min · <span data-done-key="c7/m6"></span></span><div class="note-small">The four linear risks, stack-and-roll, basis and heat-rate hedges, hierarchical risk and P&L attribution, risk adjustment and incomplete markets.</div></li></ol>
+<div class="pager"><a class="btn ghost" href="../../index.html">← Dashboard</a><a class="btn" href="m1.html">Start module 1 →</a></div></main></div>
+<script>window.PAGE={"key": "", "title": ""};</script>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/auto-render.min.js"></script>
+<script src="../../assets/js/core.js"></script>
+
+</body>
+</html>

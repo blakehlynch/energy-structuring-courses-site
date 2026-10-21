@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Market and counterparty risk: VaR, stress tests, CVA and xVA · Energy Structuring Courses</title>
+<link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{var t=localStorage.getItem('esc.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Toggle module menu">Menu</button>
+  <a class="brand" href="../../index.html">Energy Structuring Courses</a>
+  <div class="crumbs"><a href="index.html">Course 12: Market and counterparty risk</a></div>
+  <button class="icon-btn" id="theme-btn" type="button" title="Theme: auto / light / dark">Auto</button>
+</header>
+<div class="layout"><nav class="sidebar" aria-label="Course navigation"><h4>Course 12</h4><ol><li><a href="index.html" class="current"><span class="check"></span><span>Course overview</span></a></li><li><a href="glossary.html"><span class="check"></span><span>Course glossary</span></a></li><li><a href="flashcards.html"><span class="check"></span><span>All flashcards</span></a></li></ol><h4>Modules</h4><ol><li><a href="m1.html"><span class="check" data-done-key="c12/m1"></span><span>1. Value at risk and expected shortfall</span></a></li><li><a href="m2.html"><span class="check" data-done-key="c12/m2"></span><span>2. Portfolio VaR for energy books</span></a></li><li><a href="m3.html"><span class="check" data-done-key="c12/m3"></span><span>3. Backtesting, liquidity and stress testing</span></a></li><li><a href="m4.html"><span class="check" data-done-key="c12/m4"></span><span>4. Counterparty exposure: EPE, PFE, netting and collateral</span></a></li><li><a href="m5.html"><span class="check" data-done-key="c12/m5"></span><span>5. CVA, DVA and wrong-way risk</span></a></li><li><a href="m6.html"><span class="check" data-done-key="c12/m6"></span><span>6. Funding, margin, capital and the xVA desk</span></a></li></ol><h4>Site</h4><ol><li><a href="../../index.html"><span class="check"></span><span>Dashboard</span></a></li><li><a href="../../library.html"><span class="check"></span><span>Library and sources</span></a></li></ol></nav><main id="main"><p class="note-small">Course 12 · Core</p><h1>Market and counterparty risk: VaR, stress tests, CVA and xVA</h1>
+<p>Every structure in this site is a bundle of risks that someone has to measure, limit and price. This course covers the two that matter most to an energy desk. Market risk is the chance of losing money as prices move. Counterparty risk is the chance that the other side of a long-dated deal defaults while the deal is in your favour. The first half covers value at risk and expected shortfall, how to compute them for multi-commodity books, how to check that they work, and how to stress what they miss. The second half covers counterparty exposure profiles, CVA, wrong-way risk, and the funding, margin and capital charges that now sit on top of every uncollateralised hedge. Jorion is the main text for market risk and Gregory for counterparty risk. Swindle shows where energy books break the standard models, and Edwards adds the trading-floor view.</p>
+<div class="objectives">
+<div class="box"><h3>By the end you will be able to</h3><ul>
+<li>Compute VaR and expected shortfall, convert their parameters, and explain why fat tails matter.</li>
+<li>Decompose a book's VaR into component VaR and find the variance-minimising hedge.</li>
+<li>Backtest a VaR model, adjust VaR for liquidity, and design conditional stress tests.</li>
+<li>Build EPE and PFE profiles for a commodity swap and show the effect of collateral.</li>
+<li>Compute CVA from a credit curve, per MMBtu, with and without wrong-way risk.</li>
+<li>Compute FVA, MVA and KVA and compare the xVA stack across CSA terms.</li>
+</ul></div>
+<div class="box"><h3>How this course draws on the books</h3><ul>
+<li><strong>Value at risk, backtesting, liquidity and stress:</strong> Jorion ch.2, 5–7, 10, 13–15. <a class="cite" href="../../library.html#jorion" title="P. Jorion, Value at Risk: The New Benchmark for Managing Financial Risk, 3rd ed. (McGraw-Hill, 2007)">Jorion</a></li>
+<li><strong>Counterparty risk and xVA:</strong> Gregory, <em>The xVA Challenge</em>, ch.11–12, 17–21. <a class="cite" href="../../library.html#gregoryxva" title="J. Gregory, The xVA Challenge: Counterparty Risk, Funding, Collateral, Capital and Initial Margin, 4th ed. (Wiley, 2020)">Gregory (xVA)</a></li>
+<li><strong>Exposure and wrong-way risk in commodities:</strong> Gregory, <em>Counterparty Credit Risk and CVA</em>, ch.8–9, 15. <a class="cite" href="../../library.html#gregoryccr" title="J. Gregory, Counterparty Credit Risk and Credit Value Adjustment, 2nd ed. (Wiley, 2012)">Gregory (CCR)</a></li>
+<li><strong>Energy-specific risk metrics and credit:</strong> Swindle ch.16 and Edwards ch.6.3. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014)">Swindle</a> <a class="cite" href="../../library.html#edwards" title="D. Edwards, Energy Trading &amp; Investing, 2nd ed. (McGraw-Hill, 2017)">Edwards</a></li>
+</ul></div>
+</div>
+<h2>A note on dates</h2>
+<div class="box"><p>Jorion's third edition (2007) describes Basel II and predates the financial crisis. Since then the Basel market-risk rules have replaced 99% VaR with 97.5% expected shortfall (FRTB). Gregory's fourth edition (2020) is current on xVA practice, the uncleared margin rules and the SA-CCR capital method, but the Basel III final rules for CVA capital have been phased in since. <span class="mark outside" title="Added from outside the course texts; verify independently">Outside the texts</span> The methods here are stable; the regulatory parameters are not, and each module's Dated box lists what to check.</p></div>
+<h2>More depth in this course</h2>
+<div class="box"><p>Going-deeper sections cover the confidence level implied by a credit rating, why the best hedge has zero marginal VaR, why a 99% test is weak, the swap exposure peak, why wrong-way risk grows as credit quality improves, and the overlap between FVA, CVA and KVA. Tools include a VaR and ES explorer with fat tails, a spark book VaR decomposer, a VaR backtester, an exposure profiler, a CVA calculator with wrong-way risk, and an xVA stack comparison across CSA terms.</p></div>
+<h2>Reading the page markers</h2>
+<div class="box">
+<p><a class="cite" href="#">Jorion ch.5</a> Citation chip: hover for the full reference.</p>
+<p><span class="mark synth">Synthesis</span> Combined across books, or our own derivation from book inputs.</p>
+<p><span class="mark outside">Outside the texts</span> Added from beyond the course books; verify independently.</p>
+</div>
+
+<h2>Modules</h2><ol class="sources"><li><a href="m1.html"><strong>Value at risk and expected shortfall</strong></a> <span class="note-small">≈ 55 min · <span data-done-key="c12/m1"></span></span><div class="note-small">What VaR measures and what it does not, horizon and confidence choices, expected shortfall and coherence, fat tails, precision, and the Basel parameters.</div></li><li><a href="m2.html"><strong>Portfolio VaR for energy books</strong></a> <span class="note-small">≈ 65 min · <span data-done-key="c12/m2"></span></span><div class="note-small">Delta-normal portfolio VaR, diversified and undiversified VaR, marginal, incremental and component VaR, best hedges, delta-gamma, and the energy problems of mapping, seasonality and illiquid basis.</div></li><li><a href="m3.html"><strong>Backtesting, liquidity and stress testing</strong></a> <span class="note-small">≈ 65 min · <span data-done-key="c12/m3"></span></span><div class="note-small">Exception counting, the Kupiec test and the Basel traffic light, liquidity-adjusted VaR and liquidation horizons, scenario and conditional stress tests, and lessons from energy blow-ups.</div></li><li><a href="m4.html"><strong>Counterparty exposure: EPE, PFE, netting and collateral</strong></a> <span class="note-small">≈ 65 min · <span data-done-key="c12/m4"></span></span><div class="note-small">Exposure metrics, the profiles of forwards and swaps, mean reversion and drift in commodities, netting, margin terms and the margin period of risk, settlement exposure and credit support in energy.</div></li><li><a href="m5.html"><strong>CVA, DVA and wrong-way risk</strong></a> <span class="note-small">≈ 65 min · <span data-done-key="c12/m5"></span></span><div class="note-small">Default probabilities from spreads, the CVA formula, CVA as a running spread, DVA, wrong-way and right-way risk in commodities, and the problems of hedging energy CVA.</div></li><li><a href="m6.html"><strong>Funding, margin, capital and the xVA desk</strong></a> <span class="note-small">≈ 60 min · <span data-done-key="c12/m6"></span></span><div class="note-small">FVA, MVA and KVA, how CSA terms move costs between them, the hedger's liquidity risk from margin calls, and how an xVA desk prices and manages the stack.</div></li></ol>
+<div class="pager"><a class="btn ghost" href="../../index.html">← Dashboard</a><a class="btn" href="m1.html">Start module 1 →</a></div></main></div>
+<script>window.PAGE={"key": "", "title": ""};</script>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/auto-render.min.js"></script>
+<script src="../../assets/js/core.js"></script>
+
+</body>
+</html>

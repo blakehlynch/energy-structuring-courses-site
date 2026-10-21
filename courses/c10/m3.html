@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storage lease · Energy Structuring Courses</title>
+<link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{var t=localStorage.getItem('esc.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Toggle module menu">Menu</button>
+  <a class="brand" href="../../index.html">Energy Structuring Courses</a>
+  <div class="crumbs"><a href="index.html">Course 10: Capstone cases</a> / Storage lease</div>
+  <button class="icon-btn" id="theme-btn" type="button" title="Theme: auto / light / dark">Auto</button>
+</header>
+<div class="layout"><nav class="sidebar" aria-label="Course navigation"><h4>Course 10</h4><ol><li><a href="index.html"><span class="check"></span><span>Course overview</span></a></li><li><a href="glossary.html"><span class="check"></span><span>Course glossary</span></a></li><li><a href="flashcards.html"><span class="check"></span><span>All flashcards</span></a></li></ol><h4>Modules</h4><ol><li><a href="m1.html"><span class="check" data-done-key="c10/m1"></span><span>1. Refinery supply and offtake intermediation</span></a></li><li><a href="m2.html"><span class="check" data-done-key="c10/m2"></span><span>2. CCGT tolling agreement</span></a></li><li><a href="m3.html" class="current" aria-current="page"><span class="check" data-done-key="c10/m3"></span><span>3. Storage lease</span></a></li><li><a href="m4.html"><span class="check" data-done-key="c10/m4"></span><span>4. Solar PPA hedge: shape and basis</span></a></li><li><a href="m5.html"><span class="check" data-done-key="c10/m5"></span><span>5. Project-financed terminal with throughput contract</span></a></li></ol><h4>Site</h4><ol><li><a href="../../index.html"><span class="check"></span><span>Dashboard</span></a></li><li><a href="../../library.html"><span class="check"></span><span>Library and sources</span></a></li></ol></nav><main id="main">
+<p class="note-small">Course 10 · Module 3 of 5</p>
+<h1>Storage lease</h1>
+<div class="meta-row"><span class="tag tier">Capstone</span><span class="tag">≈ 70 min</span><span class="tag">8 quiz questions</span><span class="tag">2 flashcards</span></div>
+<div class="objectives">
+  <div class="box"><h3>Learning objectives</h3><ul><li>Compute intrinsic value from the forward curve and constraints.</li><li>Decide how much modelled extrinsic value to bid away.</li><li>Lock intrinsic and plan rolling-intrinsic operation.</li><li>Identify contract, operational and correlation risks.</li></ul></div>
+  <div class="box"><h3>Prerequisites</h3><ul><li>Courses 6 and 7.</li></ul></div>
+</div>
+<div class="callout"><div class="callout-title">The brief</div>
+<p>A gas utility auctions a one-year lease (April to March) of 2 Bcf (2,000,000 MMBtu) of reservoir storage. It injects up to 20,000 MMBtu a day and withdraws up to 40,000, with $0.02 variable cost each way, and runs empty to empty. Bidders quote a fixed fee. The previous lessee paid $2.3m. How much should you bid, and how will you run the lease? <span class="mark synth" title="Synthesized across two or more books">Synthesis</span></p></div>
+
+<h2 id="value">1. Intrinsic value: what you can lock today</h2>
+<p>Intrinsic value is the best schedule against today's curve, found by optimisation and locked with forward trades. It doesn't depend on any model. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (p.309)">Swindle ch.13 (p.309)</a> Eydeland and Wolyniec's forward optimisation does exactly this. Once the hedges are on, the cash flow is fixed whatever prices do, though physical decisions still follow the spreads at the time. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (pp.355–359)">Eydeland &amp; Wolyniec ch.8 (pp.355–359)</a></p>
+<div class="example"><header><strong>Worked example 1 · the bid</strong><span class="verified">Checked by code</span></header><div class="body">
+<p>The forward curve runs from $3.20 (April) to $4.60 (January). Your model puts extrinsic value at 15% of intrinsic. You will bid half of the extrinsic and keep a $0.15m margin for operating and model risk.</p>
+<div class="calc-lines">intrinsic $<span data-check="m3.ex1.intr" data-dp="3">2.436</span>m; modelled extrinsic $<span data-check="m3.ex1.ext" data-dp="3">0.365</span>m
+bid = 2.436 + 0.5 × 0.365 − 0.15 = $<span data-check="m3.ex1.bid" data-dp="3">2.469</span>m = $<span data-check="m3.ex1.unit" data-dp="3">1.234</span>/MMBtu of capacity
+paying last year's $2.3m would leave an expected $<span data-check="m3.ex1.npv" data-dp="3">0.319</span>m before your $0.15m margin</div>
+<p>Bid off intrinsic plus a fraction of extrinsic, never the full model value. Swindle stresses that extrinsic value rests on correlation inputs the market barely reveals. Rolling intrinsic is only a lower-bound strategy, and its gains are offset by transaction costs. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.331–333)">Swindle ch.13 (pp.331–333)</a> <a class="cite" href="../../library.html#mahoney" title="D. Mahoney, Modeling and Valuation of Energy Structures (Palgrave Macmillan, 2016), §3.1.4 (pp.70–71)">Mahoney §3.1.4 (pp.70–71)</a> <span class="mark synth" title="Synthesized across two or more books">Synthesis</span></p></div></div>
+
+<section class="widget" id="w-lease"><header><h3>Storage lease bid</h3><span class="hint">Intrinsic value plus the share of extrinsic you are willing to pay for</span></header><div class="wbody">
+<div class="controls">
+  <div class="control"><label for="l-k">Winter–summer spread scale <output id="l-k-o"></output></label><input id="l-k" type="range" min="0" max="2" step="0.05" value="1"></div>
+  <div class="control"><label for="l-e">Modelled extrinsic (% of intrinsic) <output id="l-e-o"></output></label><input id="l-e" type="range" min="0" max="0.6" step="0.01" value="0.15"></div>
+  <div class="control"><label for="l-c">Share of extrinsic bid <output id="l-c-o"></output></label><input id="l-c" type="range" min="0" max="1" step="0.05" value="0.5"></div>
+  <div class="control"><label for="l-m">Required margin ($m) <output id="l-m-o"></output></label><input id="l-m" type="range" min="0" max="0.6" step="0.01" value="0.15"></div>
+</div>
+<div class="stats" id="l-stats"></div>
+<div class="chart-box short"><canvas id="l-chart" aria-label="Bid build-up"></canvas></div>
+<p class="note-small">2 Bcf, 20,000/day injection, 40,000/day withdrawal, $0.02 each way, empty to empty. The spread scale stretches the base curve around April's $3.20.</p>
+</div></section>
+
+<div class="example"><header><strong>Worked example 2 · a narrower seasonal spread</strong><span class="verified">Checked by code</span></header><div class="body">
+<p>If the winter–summer spread halves, intrinsic value falls to $<span data-check="m3.ex2.intrHalf" data-dp="3">1.178</span>m and the bid to $<span data-check="m3.ex2.bidHalf" data-dp="3">1.116</span>m. Last year's $2.3m fee would now lose money.</p>
+<p>Lease values track the curve's seasonal spread. When markets are oversupplied with storage, lessors must accept lower fees, and Swindle notes that storage owners charge what the spread will bear. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.2 (p.28)">Swindle ch.2 (p.28)</a> <span class="mark synth" title="Synthesized across two or more books">Synthesis</span></p></div></div>
+
+<h2 id="contract">2. Read the contract like a structurer</h2>
+<p>Leases differ in what the lessor keeps. Eydeland and Wolyniec's example lease requires the lessee to be 75% full by end-October, keeps a 30% winter minimum, and lets the lessor withdraw up to 75% at its discretion. Each constraint cuts value, and lessor withdrawals driven by its own customer demand turn part of the deal into a load obligation. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (p.354)">Eydeland &amp; Wolyniec ch.8 (p.354)</a> Physical facts matter too: ratchets (rates that fall as inventory nears full or empty), maintenance windows and fuel retention all reduce deliverability. Swindle notes that the geology itself is only partly known. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.298–299)">Swindle ch.13 (pp.298–299)</a></p>
+
+<h2 id="operate">3. Run the lease</h2>
+<ul>
+<li><strong>Lock intrinsic on award:</strong> buy the injection months and sell the withdrawal months on the curve. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (p.359)">Eydeland &amp; Wolyniec ch.8 (p.359)</a></li>
+<li><strong>Re-optimise:</strong> roll the hedge when the curve offers a better schedule (rolling intrinsic). Track the gains against the extrinsic you paid for. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.323–324)">Swindle ch.13 (pp.323–324)</a></li>
+<li><strong>Use the daily market:</strong> intra-month cash spreads and weather-driven spikes add value that monthly models miss, and cold weather in consuming regions drives the biggest daily moves. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (p.331)">Swindle ch.13 (p.331)</a></li>
+<li><strong>Watch the greeks of any CSO overlay:</strong> LP re-optimisation makes them jump. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (p.326)">Swindle ch.13 (p.326)</a></li>
+</ul>
+
+<h2 id="terms">4. Term sheet sketch</h2>
+<ul>
+<li>Capacity, rates and ratchets, inventory start and end conditions, and any intermediate minimums or maximums. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (p.299)">Swindle ch.13 (p.299)</a></li>
+<li>Fee: fixed, paid monthly. Consider a lower fixed fee plus a share of realised spread above a hurdle if the lessor will share upside. <span class="mark synth" title="Synthesized across two or more books">Synthesis</span></li>
+<li>Fuel retention and variable charges, maintenance windows, force majeure and curtailment priority against other users. <span class="mark outside" title="Added from outside the course texts; verify independently">Outside the texts</span></li>
+<li>Lessor recall or peaking rights explicitly priced, or removed. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (p.354)">Eydeland &amp; Wolyniec ch.8 (p.354)</a></li>
+</ul>
+
+<div class="callout alm"><div class="callout-title">ALM analogy</div>
+<p>Bidding for storage is like bidding for an asset portfolio with an embedded rebalancing option. The intrinsic part is a locked spread, like a matched book. The extrinsic part is the value of dynamic rebalancing, which depends on correlation assumptions as a dynamic hedging strategy's value depends on the covariance matrix. Pay for the locked spread and only a cautious share of the model value. <span class="mark synth" title="Synthesized across two or more books">Synthesis</span></p></div>
+
+<div class="callout dated"><div class="callout-title">Dated: storage markets today</div>
+<p>European storage now operates under minimum fill obligations introduced in 2022, which change both value and flexibility. US seasonal spreads have narrowed in some years with ample production and more salt-cavern capacity, while weather extremes still create large daily spikes. <span class="mark outside" title="Added from outside the course texts; verify independently">Outside the texts</span> Check AGSI+ (GIE), EIA weekly storage and current tariff filings.</p></div>
+
+<h2 id="deeper">Going deeper: who should hold storage?</h2>
+<p>The utility leases its storage because it values certainty of a fee above the volatile trading value of the facility. You lease it because you can monetise spreads across a portfolio, hedge efficiently and use daily optionality. Eydeland and Wolyniec's principle that liquid markets make values additive cuts both ways. If the utility can buy gas at liquid hubs in winter, it doesn't need storage for supply security and should lease it out. If the location is illiquid, joint use with the utility's supply needs is worth up to the bid-ask spread, and the lease should share that value. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (pp.381–383)">Eydeland &amp; Wolyniec ch.8 (pp.381–383)</a> <span class="mark synth" title="Synthesized across two or more books">Synthesis</span></p>
+
+<h2 id="takeaways">Key takeaways</h2>
+<ul>
+<li>Compute intrinsic value and lock it. Bid only a fraction of modelled extrinsic value.</li>
+<li>Lease values follow the seasonal spread, so a fee that worked last year may not this year.</li>
+<li>Constraints, ratchets and lessor rights all cut value. Price them or remove them.</li>
+<li>Run the lease with rolling intrinsic and daily optimisation, and watch transaction costs.</li>
+</ul>
+
+<h2 id="quiz-heading">Quiz</h2>
+<p class="note-small">Each answer is checked as you go. Scores are saved in this browser (best and last attempt).</p>
+<div id="quiz" class="quiz"></div>
+<h2 id="cards-heading">Flashcards</h2>
+<div id="cards" class="cards"></div>
+<h2 id="sources-heading">Sources for this module</h2>
+<ul class="sources"><li><a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.297–333)">Swindle ch.13 (pp.297–333)</a> — Storage valuation methods and their limits.</li><li><a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (pp.354–362)">Eydeland &amp; Wolyniec ch.8 (pp.354–362)</a> — Lease structures, forward optimisation, spread options.</li><li><a class="cite" href="../../library.html#mahoney" title="D. Mahoney, Modeling and Valuation of Energy Structures (Palgrave Macmillan, 2016), §3.1.4 (pp.68–71)">Mahoney §3.1.4 (pp.68–71)</a> — Rolling intrinsic and its risks.</li></ul>
+<div class="pager"><a class="btn ghost" href="m2.html">← CCGT tolling agreement</a><button class="btn complete-btn" id="complete-btn" type="button">Mark module complete</button><a class="btn ghost" href="m4.html">Solar PPA hedge: shape and basis →</a></div>
+<script type="application/json" id="quiz-data">{"questions": [{"type": "num", "check": "quiz.m3.intr", "q": "You can fill 1,000,000 MMBtu in summer at $3.30 and sell it in January at $4.40, paying $0.02 to inject and $0.02 to withdraw. Ignoring financing, what intrinsic value can you lock ($m)?", "answer": 1.06, "tol": 0.005, "dp": 2, "unit": "$m", "explain": "(4.40 \u2212 3.30 \u2212 0.04) \u00d7 1,000,000 = $1.06m.", "cite": "<a class=\"cite\" href=\"../../library.html#eydeland\" title=\"A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (pp.355\u2013356)\">Eydeland &amp; Wolyniec ch.8 (pp.355\u2013356)</a>"}, {"type": "mc", "q": "Why bid only a fraction of modelled extrinsic value?", "options": ["Because extrinsic value is fully hedgeable with CSOs, so paying for it adds no risk.", "It rests on correlation inputs the market barely reveals, and costs eat into it.", "Because lessors refuse bids above intrinsic value under standard lease terms.", "Because extrinsic value is paid out only at lease end, so it must be discounted heavily."], "answer": 1, "explain": "Swindle and Mahoney on extrinsic value risks.", "cite": "<a class=\"cite\" href=\"../../library.html#swindle\" title=\"G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.331\u2013333)\">Swindle ch.13 (pp.331\u2013333)</a> <a class=\"cite\" href=\"../../library.html#mahoney\" title=\"D. Mahoney, Modeling and Valuation of Energy Structures (Palgrave Macmillan, 2016), \u00a73.1.4 (pp.70\u201371)\">Mahoney \u00a73.1.4 (pp.70\u201371)</a>"}, {"type": "mc", "q": "What happens to a storage lease's value when the winter\u2013summer spread narrows?", "options": ["It rises, because a narrower spread means more cycling opportunities.", "Intrinsic value falls roughly in proportion, so the fee you can pay falls too.", "It is unchanged, because lease value depends only on capacity and rates.", "It falls only if interest rates also fall."], "answer": 1, "explain": "Example 2: halving the spread roughly halved the bid.", "cite": "<span class=\"mark synth\" title=\"Synthesized across two or more books\">Synthesis</span>"}, {"type": "mc", "desk": true, "q": "The utility's lease draft keeps the right to withdraw up to 75% of capacity at its discretion in winter. How do you treat it?", "options": ["Ignore it: withdrawal rights held by the lessor are rarely exercised and do not affect value.", "Value the facility net of it; demand-driven withdrawals are a load obligation to price.", "Value it as extra optionality for you, since the utility's withdrawals add flexibility to the facility.", "Accept it as standard, since all storage leases reserve 75% for the owner in winter."], "answer": 1, "explain": "Eydeland & Wolyniec's lease example.", "cite": "<a class=\"cite\" href=\"../../library.html#eydeland\" title=\"A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (p.354)\">Eydeland &amp; Wolyniec ch.8 (p.354)</a>"}, {"type": "mc", "desk": true, "q": "You win the lease at $2.4m. What do you do the same afternoon?", "options": ["Wait for the curve to move before hedging, since rolling intrinsic captures more value from an unhedged start.", "Lock intrinsic by buying injection months and selling withdrawal months forward.", "Buy winter and sell summer forward, since you inject in winter and withdraw in summer.", "Hedge only the extrinsic value with options, since intrinsic value is locked by the lease itself."], "answer": 1, "explain": "Forward optimisation and static hedging.", "cite": "<a class=\"cite\" href=\"../../library.html#eydeland\" title=\"A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (p.359)\">Eydeland &amp; Wolyniec ch.8 (p.359)</a> <a class=\"cite\" href=\"../../library.html#swindle\" title=\"G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.323\u2013324)\">Swindle ch.13 (pp.323\u2013324)</a>"}, {"type": "mc", "desk": true, "q": "Midway through the lease, re-optimising your CSO overlay causes your gas deltas to jump overnight. Risk asks why.", "options": ["The CSO overlay has expired; deltas jump when options roll off the book at month end.", "LP portfolios aren't smooth in inputs, so small changes switch the optimum.", "Gas prices moved sharply overnight; LP greeks only change when the market moves.", "The facility's physical inventory changed, since deltas track inventory one-for-one."], "answer": 1, "explain": "Swindle's warning about subordinating CSO portfolios.", "cite": "<a class=\"cite\" href=\"../../library.html#swindle\" title=\"G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (p.326)\">Swindle ch.13 (p.326)</a>"}, {"type": "mc", "desk": true, "q": "The lessor proposes a lower fixed fee plus 30% of realised spread above $0.50. When is that attractive to you?", "options": ["Never: any sharing of realised spread is worse than a fixed fee, because it gives away all upside.", "When your expected capture is modest or uncertain, so sharing cuts your fixed risk.", "Always: a lower fixed fee is always better, whatever the expected spread.", "Only if the spread is certain to exceed $0.50, since sharing below that level costs you nothing."], "answer": 1, "explain": "Risk sharing aligns incentives when model value is uncertain.", "cite": "<span class=\"mark synth\" title=\"Synthesized across two or more books\">Synthesis</span>"}, {"type": "mc", "q": "Which physical features reduce a facility's deliverable value?", "options": ["Salt-cavern geology and high injection rates.", "Ratchets (rates that fall near full or empty), maintenance windows, fuel retention and inventory constraints.", "Liquid hub access, short pipeline connections and modern compressors.", "Multiple turns per year and fast withdrawal."], "answer": 1, "explain": "Swindle on physical storage constraints.", "cite": "<a class=\"cite\" href=\"../../library.html#swindle\" title=\"G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014), ch.13 (pp.298\u2013299)\">Swindle ch.13 (pp.298\u2013299)</a>"}]}</script>
+<script type="application/json" id="cards-data">[{"term": "Lease bid", "def": "Intrinsic value plus a share of modelled extrinsic value, less a required margin.", "cite": "<span class=\"mark synth\" title=\"Synthesized across two or more books\">Synthesis</span>"}, {"term": "Recall / peaking rights", "def": "Lessor's retained right to withdraw gas, which reduces the lessee's value.", "cite": "<a class=\"cite\" href=\"../../library.html#eydeland\" title=\"A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003), ch.8 (p.354)\">Eydeland &amp; Wolyniec ch.8 (p.354)</a>"}]</script>
+</main></div>
+<script>window.PAGE={"key": "c10/m3", "title": "C10 \u00b7 Storage lease", "href": "courses/c10/m3.html"};</script>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/auto-render.min.js"></script>
+<script src="../../assets/js/core.js"></script>
+<script src="../../assets/vendor/chartjs/chart.umd.min.js"></script>
+<script src="../../assets/js/charts.js"></script>
+<script src="../../courses/c10/calc.js"></script>
+<script src="../../courses/c10/m3.js"></script>
+<script>
+(function(){var q=JSON.parse(document.getElementById('quiz-data').textContent);
+ESC.quiz(document.getElementById('quiz'),q,'c10/m3');
+ESC.cards(document.getElementById('cards'),JSON.parse(document.getElementById('cards-data').textContent),'c10/m3');})();
+</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Forward curves and stochastic price models · Energy Structuring Courses</title>
+<link rel="stylesheet" href="../../assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>try{var t=localStorage.getItem('esc.theme');if(t==='light'||t==='dark')document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+
+</head>
+<body>
+<header class="topbar">
+  <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Toggle module menu">Menu</button>
+  <a class="brand" href="../../index.html">Energy Structuring Courses</a>
+  <div class="crumbs"><a href="index.html">Course 6: Forward curves and models</a></div>
+  <button class="icon-btn" id="theme-btn" type="button" title="Theme: auto / light / dark">Auto</button>
+</header>
+<div class="layout"><nav class="sidebar" aria-label="Course navigation"><h4>Course 6</h4><ol><li><a href="index.html" class="current"><span class="check"></span><span>Course overview</span></a></li><li><a href="glossary.html"><span class="check"></span><span>Course glossary</span></a></li><li><a href="flashcards.html"><span class="check"></span><span>All flashcards</span></a></li></ol><h4>Modules</h4><ol><li><a href="m1.html"><span class="check" data-done-key="c6/m1"></span><span>1. Carry and convenience yield</span></a></li><li><a href="m2.html"><span class="check" data-done-key="c6/m2"></span><span>2. Curve building and seasonality</span></a></li><li><a href="m3.html"><span class="check" data-done-key="c6/m3"></span><span>3. Mean reversion, Schwartz models and jumps</span></a></li><li><a href="m4.html"><span class="check" data-done-key="c6/m4"></span><span>4. Curve dynamics and factor models</span></a></li><li><a href="m5.html"><span class="check" data-done-key="c6/m5"></span><span>5. Volatility, skew and correlation</span></a></li><li><a href="m6.html"><span class="check" data-done-key="c6/m6"></span><span>6. Hybrid power price models</span></a></li></ol><h4>Site</h4><ol><li><a href="../../index.html"><span class="check"></span><span>Dashboard</span></a></li><li><a href="../../library.html"><span class="check"></span><span>Library and sources</span></a></li></ol></nav><main id="main"><p class="note-small">Course 6 · Core</p><h1>Forward curves and stochastic price models</h1>
+<p>Every structured energy deal is priced off a forward curve and a model of how that curve moves. This course builds both. It covers why forwards sit where they do (carry, storage and convenience yield), how a desk builds a monthly curve from sparse quotes, the stochastic models that turn spot behaviour into forward prices (mean reversion, Schwartz models, jumps), and how the whole curve moves (volatility backwardation, correlation, principal components). It ends with the volatility, skew and correlation inputs that options and spread options need, and the hybrid fundamental models used for power. It draws on Clewlow and Strickland for the core models, Swindle for desk-level valuation practice, and Eydeland and Wolyniec for power.</p>
+<div class="objectives">
+<div class="box"><h3>By the end you will be able to</h3><ul>
+<li>Back out convenience yields and value cash-and-carry, storage and roll trades.</li>
+<li>Build an arbitrage-free seasonal curve from strip quotes and derive missing buckets.</li>
+<li>Compute Schwartz forwards, half-lives and forward volatilities, and estimate reversion and jumps.</li>
+<li>Run PCA on a forward curve and size stack-and-roll hedges.</li>
+<li>Price early-expiry options, costless collars and spread options, and explain implied correlation.</li>
+<li>Explain hybrid stack models and how capacity changes move power volatility and correlation.</li>
+</ul></div>
+<div class="box"><h3>How this course draws on the books</h3><ul>
+<li><strong>Spot and forward-curve models:</strong> Clewlow &amp; Strickland ch.2, 4, 6, 8. <a class="cite" href="../../library.html#clewlow" title="L. Clewlow, C. Strickland, Energy Derivatives: Pricing and Risk Management (Lacima, 2000)">Clewlow &amp; Strickland</a></li>
+<li><strong>Carry, dynamics, volatility, skew, correlation and factor models:</strong> Swindle ch.2, 5, 7–9, 11. <a class="cite" href="../../library.html#swindle" title="G. Swindle, Valuation and Risk Management in Energy Markets (Cambridge University Press, 2014)">Swindle</a></li>
+<li><strong>Correlation and hybrid power models:</strong> Eydeland &amp; Wolyniec ch.6–7. <a class="cite" href="../../library.html#eydeland" title="A. Eydeland, K. Wolyniec, Energy and Power Risk Management (Wiley, 2003)">Eydeland &amp; Wolyniec</a></li>
+</ul></div>
+</div>
+<h2>A note on dates</h2>
+<div class="box"><p>Clewlow and Strickland (2000) and Eydeland and Wolyniec (2003) use late-1990s and early-2000s data. Swindle (2014) runs to 2012. The models remain standard, but their parameters and the market regimes behind them have changed: negative prices, shale and LNG-driven gas, renewable-heavy power stacks, and SOFR in place of LIBOR. Each module's Dated box lists what to recheck.</p></div>
+<h2>More depth in this course</h2>
+<div class="box"><p>Going-deeper sections cover convenience yield as an option, shape risk as a position, forward volatility as integrated spot reversion, what PCA can't see, what Margrabe leaves out, and the conditional structure of hybrid models. Tools include a carry curve builder, a seasonal curve builder, a Schwartz curve, a mean-reverting jump simulator with estimation, a two-factor PCA explorer, an early-expiry volatility calculator, a spark-spread option and a stack-based hybrid simulator.</p></div>
+<h2>Reading the page markers</h2>
+<div class="box">
+<p><a class="cite" href="#">Swindle ch.5</a> Citation chip: hover for the full reference.</p>
+<p><span class="mark synth">Synthesis</span> Combined across books, or our own derivation from book inputs.</p>
+<p><span class="mark outside">Outside the texts</span> Added from beyond the course books; verify independently.</p>
+</div>
+
+<h2>Modules</h2><ol class="sources"><li><a href="m1.html"><strong>Carry and convenience yield</strong></a> <span class="note-small">≈ 55 min · <span data-done-key="c6/m1"></span></span><div class="note-small">Cost-of-carry bounds, storage costs, convenience yield, forward yields, cash-and-carry and storage trades, and why rolling futures is not owning spot.</div></li><li><a href="m2.html"><strong>Curve building and seasonality</strong></a> <span class="note-small">≈ 55 min · <span data-done-key="c6/m2"></span></span><div class="note-small">Forwards versus forecasts, shaping monthly curves to strip quotes, seasonal gas, peak and off-peak power, and the three approaches to electricity curves.</div></li><li><a href="m3.html"><strong>Mean reversion, Schwartz models and jumps</strong></a> <span class="note-small">≈ 65 min · <span data-done-key="c6/m3"></span></span><div class="note-small">Mean-reverting spot processes, half-life, the Schwartz one- and two-factor forward formulas, jumps and spikes, and estimating the parameters.</div></li><li><a href="m4.html"><strong>Curve dynamics and factor models</strong></a> <span class="note-small">≈ 60 min · <span data-done-key="c6/m4"></span></span><div class="note-small">The Samuelson effect, correlation term structure, principal components, exponential factor models, and stack-and-roll hedge ratios.</div></li><li><a href="m5.html"><strong>Volatility, skew and correlation</strong></a> <span class="note-small">≈ 70 min · <span data-done-key="c6/m5"></span></span><div class="note-small">Black-76, term volatility for non-standard expiries, skew and costless collars, Margrabe spread options and implied correlation.</div></li><li><a href="m6.html"><strong>Hybrid power price models</strong></a> <span class="note-small">≈ 60 min · <span data-done-key="c6/m6"></span></span><div class="note-small">Why power needs fundamentals, production-cost and equilibrium models, stack-based hybrid models, quote matching, and correlation shifts from new capacity.</div></li></ol>
+<div class="pager"><a class="btn ghost" href="../../index.html">← Dashboard</a><a class="btn" href="m1.html">Start module 1 →</a></div></main></div>
+<script>window.PAGE={"key": "", "title": ""};</script>
+<script src="../../assets/vendor/katex/katex.min.js"></script>
+<script src="../../assets/vendor/katex/auto-render.min.js"></script>
+<script src="../../assets/js/core.js"></script>
+
+</body>
+</html>
